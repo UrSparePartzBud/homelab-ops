@@ -29,13 +29,13 @@ Infrastructure as Code (IaC) repository for a bare-metal Kubernetes cluster (K3s
 * Implemented `.gitignore` logic to ensure system logs/reports remain outside of version control.
 
 ### Module 3: High-Availability Deployments
-* Deployed a 3-replica Nginx web server ("Construction by Garfield") across the fleet.
-* Utilized Kubernetes `Namespaces` for workload isolation.
+* Deployed a 3-replica Nginx web server across the fleet to ensure service availability.
+* Utilized Kubernetes `Namespaces` for logical workload isolation.
 * Configured `LoadBalancer` services and validated ingress via `kubectl port-forward`.
 
 ### Module 4: Fleet Automation & Maintenance
 * Implemented a "Master" Ansible Playbook (`apt-update.yaml`) for rolling system updates.
-* **Zero-Downtime Logic:** Utilized `serial: 1` to ensure only one node is offline at a time.
+* **Zero-Downtime Logic:** Utilized `serial: 1` to ensure high availability during maintenance windows.
 * Automated kernel update detection and intelligent node reboots.
 
 ### Module 5: Distributed Persistence (Longhorn)
@@ -46,6 +46,6 @@ Infrastructure as Code (IaC) repository for a bare-metal Kubernetes cluster (K3s
 ---
 
 ## 📈 Next Steps
-* **External Ingress:** Configuring Traefik to route external traffic via custom domains (e.g., `myholodeck.org`).
-* **CI/CD:** Automating manifest updates directly from GitHub Actions.
-* **Creative Projects:** Integrating the "Redwood" cartoon project and AI media scripts into the cluster.
+* **Ingress Controller Configuration:** Implementing Traefik to route production traffic via custom domains and SSL/TLS termination.
+* **CI/CD Integration:** Developing GitHub Actions pipelines for automated linting and deployment of Kubernetes manifests.
+* **Monitoring & Observability:** Deploying a Prometheus and Grafana stack to track cluster-wide resource utilization and performance metrics.
