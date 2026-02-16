@@ -43,9 +43,13 @@ Infrastructure as Code (IaC) repository for a bare-metal Kubernetes cluster (K3s
 * Deployed 27 pods to manage a distributed block storage layer across all nodes.
 * Enabled persistent volume replication to ensure data survives hardware failures.
 
+### Module 6: Observability & Metrics
+* Leveraged Kubernetes Metrics Server to implement real-time resource tracking.
+* Developed automation scripts to audit CPU/Memory utilization across the 3-node fleet for capacity planning.
+
 ---
 
 ## 📈 Next Steps
 * **Ingress Controller Configuration:** Implementing Traefik to route production traffic via custom domains and SSL/TLS termination.
 * **CI/CD Integration:** Developing GitHub Actions pipelines for automated linting and deployment of Kubernetes manifests.
-* **Monitoring & Observability:** Deploying a Prometheus and Grafana stack to track cluster-wide resource utilization and performance metrics.
+* **Monitoring Stack:** Deploying Prometheus and Grafana for long-term historical data visualization and alerting.
