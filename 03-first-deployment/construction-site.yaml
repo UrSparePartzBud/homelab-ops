@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: web-project
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: construction-site
+  namespace: web-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: construction-site
+  template:
+    metadata:
+      labels:
+        app: construction-site
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "echo '<h1>Construction by Garfield</h1><p>Powered by K3s Optiplex Cluster</p>' > /usr/share/nginx/html/index.html"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: construction-service
+  namespace: web-project
+spec:
+  type: LoadBalancer
+  selector:
+    app: construction-site
+  ports:
+    - port: 80
+      targetPort: 80
