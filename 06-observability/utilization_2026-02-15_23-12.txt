@@ -1,0 +1,14 @@
+--- CLUSTER RESOURCE REPORT (2026-02-15_23-12) ---
+NODE UTILIZATION:
+NAME          CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+k3s-node-01   247m         6%       1596Mi          10%         
+k3s-node-02   119m         2%       946Mi           5%          
+k3s-node-03   130m         3%       770Mi           4%          
+
+TOP 5 HEAVIEST PODS:
+NAMESPACE         NAME                                                CPU(cores)   MEMORY(bytes)   
+longhorn-system   instance-manager-9b8bea2405219167d95a6c63f6aa516f   58m          147Mi           
+longhorn-system   instance-manager-4cf841fe4d9e1cc559a5db56d19471fe   28m          133Mi           
+longhorn-system   longhorn-manager-p4xpc                              22m          110Mi           
+longhorn-system   instance-manager-f28ea52b12bd45fd0c87256d4f93d27e   18m          111Mi           
+longhorn-system   longhorn-manager-jtqqn                              16m          81Mi            
